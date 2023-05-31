@@ -19,7 +19,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="circle" :class="{ active }">{{ props.number }}</div>
+  <div class="circle" :class="{ active: store.checkActive(props.number) }">{{ props.number }}</div>
 </template>
 
 <style lang="scss" scoped>

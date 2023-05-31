@@ -21,6 +21,13 @@ export const useProgressStepsStore = defineStore("progressSteps", () => {
     };
   });
 
+  // Stepのactive判定
+  const checkActive = computed(() => {
+    return (number) => {
+      return number <= stepNumber.value ? true : false;
+    };
+  });
+
   // stepを進める
   const addStepNumber = () => {
     if (stepNumber.value < 4) {
@@ -35,5 +42,5 @@ export const useProgressStepsStore = defineStore("progressSteps", () => {
     }
   };
 
-  return { stepNumber, checkDisable, addStepNumber, subStepNumber };
+  return { stepNumber, checkDisable, checkActive, addStepNumber, subStepNumber };
 });
