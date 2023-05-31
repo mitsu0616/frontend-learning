@@ -24,14 +24,14 @@ export const useProgressStepsStore = defineStore("progressSteps", () => {
   // stepを進める
   const addStepNumber = () => {
     if (stepNumber.value < 4) {
-      stepNumber++;
+      stepNumber.value++;
     }
   };
 
   // stepを戻す
   const subStepNumber = () => {
     if (stepNumber.value > 1) {
-      stepNumber--;
+      stepNumber.value--;
     }
   };
 

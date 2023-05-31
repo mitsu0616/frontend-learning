@@ -1,6 +1,18 @@
 <script setup>
-import StepBar from "../components/ProgressSteps/StepBar.vue"
-import Button from "../components/ProgressSteps/Button.vue"
+import StepBar from "../components/ProgressSteps/StepBar.vue";
+import Button from "../components/ProgressSteps/Button.vue";
+
+import { useProgressStepsStore } from "../store/progressSteps";
+
+const store = useProgressStepsStore();
+
+const prevOnClick = () => {
+  store.subStepNumber();
+};
+
+const nextOnClick = () => {
+  store.addStepNumber();
+};
 </script>
 
 <template>
@@ -8,8 +20,8 @@ import Button from "../components/ProgressSteps/Button.vue"
   <div class="page">
     <div class="container">
       <StepBar />
-      <Button name="Prev"/>
-      <Button name="Next"/>
+      <Button name="Prev" @click="prevOnClick" />
+      <Button name="Next" @click="nextOnClick" />
     </div>
   </div>
 </template>

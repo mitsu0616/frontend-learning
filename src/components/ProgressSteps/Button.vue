@@ -2,15 +2,23 @@
 import { useProgressStepsStore } from "../../store/progressSteps";
 
 const props = defineProps({
-  name: String
-})
+  name: String,
+});
+
+const emit = defineEmits(["click"]);
 
 const store = useProgressStepsStore();
 
 </script>
 
 <template>
-  <button class="btn" :disabled="store.checkDisable(props.name)">{{ props.name }}</button>
+  <button
+    class="btn"
+    :disabled="store.checkDisable(props.name)"
+    @click="emit('click')"
+  >
+    {{ props.name }}
+  </button>
 </template>
 
 <style lang="scss" scoped>
