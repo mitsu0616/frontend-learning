@@ -1,15 +1,18 @@
 <script setup>
-import StepCircle from "./StepCircle.vue"
+import StepCircle from "./StepCircle.vue";
+import { useProgressStepsStore } from "../../store/progressSteps";
+
+const store = useProgressStepsStore();
 </script>
 
 <template>
   <div class="container">
-    <div class="progress"></div>
+    <div class="progress" :style="store.setBarWidth"></div>
     <!-- 数値型でpropsを渡すときは":プロパティ名"のようにコロンをつける必要がある -->
-    <StepCircle :number=1 />
-    <StepCircle :number=2 />
-    <StepCircle :number=3 />
-    <StepCircle :number=4 />
+    <StepCircle :number="1" />
+    <StepCircle :number="2" />
+    <StepCircle :number="3" />
+    <StepCircle :number="4" />
   </div>
 </template>
 
@@ -24,8 +27,8 @@ $line-border-empty: #e0e0e0;
   max-width: 100%;
   width: 350px;
 
-  ::before {
-    content: '';
+  &::before {
+    content: "";
     background-color: $line-border-empty;
     position: absolute;
     top: 50%;
@@ -45,7 +48,7 @@ $line-border-empty: #e0e0e0;
     height: 4px;
     width: 0%;
     z-index: -1;
-    transition: 0.4s ease;;
+    transition: 0.4s ease;
   }
 }
 </style>
