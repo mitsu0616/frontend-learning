@@ -8,8 +8,8 @@ import Button from "../components/ProgressSteps/Button.vue"
   <div class="page">
     <div class="container">
       <StepBar />
-      <Button />
-      <Button />
+      <Button name="Prev"/>
+      <Button name="Next"/>
     </div>
   </div>
 </template>

@@ -5,10 +5,11 @@ import StepCircle from "./StepCircle.vue"
 <template>
   <div class="container">
     <div class="progress"></div>
-    <StepCircle number="1"/>
-    <StepCircle number="2"/>
-    <StepCircle number="3"/>
-    <StepCircle number="4"/>
+    <!-- 数値型でpropsを渡すときは":プロパティ名"のようにコロンをつける必要がある -->
+    <StepCircle :number=1 />
+    <StepCircle :number=2 />
+    <StepCircle :number=3 />
+    <StepCircle :number=4 />
   </div>
 </template>
 
