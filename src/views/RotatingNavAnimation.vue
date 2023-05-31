@@ -1,5 +1,7 @@
 <script setup></script>
 
-<template></template>
+<template>
+  <fa icon="bars" />
+</template>
 
 <style lang="scss" scoped></style>
