@@ -1,13 +1,25 @@
 <script setup>
+import { ref, onMounted } from "vue";
+import { useProgressStepsStore } from "../../store/progressSteps";
+
 const props = defineProps({
   number: Number,
-  active: Boolean,
 });
 
+const store = useProgressStepsStore();
+
+const active = ref(false);
+
+// 初回表示時にactiveを更新
+onMounted(() => {
+  if (store.stepNumber >= props.number) {
+    active.value = true;
+  }
+});
 </script>
 
 <template>
-  <div class="circle" :class="{ active: props.active }">{{ props.number }}</div>
+  <div class="circle" :class="{ active }">{{ props.number }}</div>
 </template>
 
 <style lang="scss" scoped>

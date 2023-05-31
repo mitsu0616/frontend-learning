@@ -14,4 +14,19 @@ import Button from "../components/ProgressSteps/Button.vue"
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.page {
+  box-sizing: border-box;
+  // background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+
+  .container {
+    text-align: center;
+  }
+}
+</style>
