@@ -16,7 +16,6 @@ const nextOnClick = () => {
 </script>
 
 <template>
-  <h1>Progress Steps</h1>
   <div class="page">
     <div class="container">
       <StepBar />
@@ -29,7 +28,6 @@ const nextOnClick = () => {
 <style lang="scss" scoped>
 .page {
   box-sizing: border-box;
-  // background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;

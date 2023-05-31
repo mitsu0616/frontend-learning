@@ -2,7 +2,7 @@ import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 
 export const useProgressStepsStore = defineStore("progressSteps", () => {
-  const steps = 4;
+  const steps = 4; // step数
   const stepNumber = ref(1); // 現在のstep
 
   // Buttonのactive判定
@@ -12,7 +12,7 @@ export const useProgressStepsStore = defineStore("progressSteps", () => {
       let result = false;
       if (
         (name === "Prev" && stepNumber.value === 1) ||
-        (name === "Next" && stepNumber.value === 4)
+        (name === "Next" && stepNumber.value === steps)
       ) {
         result = true;
       }
@@ -35,7 +35,7 @@ export const useProgressStepsStore = defineStore("progressSteps", () => {
 
   // stepを進める
   const addStepNumber = () => {
-    if (stepNumber.value < 4) {
+    if (stepNumber.value < steps) {
       stepNumber.value++;
     }
   };
@@ -48,6 +48,7 @@ export const useProgressStepsStore = defineStore("progressSteps", () => {
   };
 
   return {
+    steps,
     stepNumber,
     checkDisable,
     checkActive,

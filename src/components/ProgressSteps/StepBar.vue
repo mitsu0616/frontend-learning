@@ -9,10 +9,7 @@ const store = useProgressStepsStore();
   <div class="container">
     <div class="progress" :style="store.setBarWidth"></div>
     <!-- 数値型でpropsを渡すときは":プロパティ名"のようにコロンをつける必要がある -->
-    <StepCircle :number="1" />
-    <StepCircle :number="2" />
-    <StepCircle :number="3" />
-    <StepCircle :number="4" />
+    <StepCircle v-for="n in store.steps" :key="n" :number="n" />
   </div>
 </template>
 
